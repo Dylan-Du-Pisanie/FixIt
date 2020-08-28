@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            Toast.makeText(this, "$ReturnEmail",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${ReturnEmail}",Toast.LENGTH_SHORT).show()
 
         }
 
