@@ -2,45 +2,79 @@ package com.example.fixit
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
+import kotlinx.android.synthetic.main.fragment_log_in.*
+import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 class MainActivity : AppCompatActivity() {
+    lateinit var signupFragment: fragment_sign_up
+    lateinit var logInFragment: LogInFragment
+
     @SuppressLint("ShowToast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-      val LogInButton : Button = findViewById(R.id.LogIn_btn)
-      val UserEmail : EditText = findViewById(R.id.email_edtText)
-      val TestEmail : String = "test@gmail.com"
-       var ReturnEmail : String = ReferenceEmail(UserEmail,TestEmail).toString()
+        logInFragment = LogInFragment()
+        signupFragment = fragment_sign_up()
 
-        LogInButton.setOnClickListener(){
-
-
-
-            Toast.makeText(this, "${ReturnEmail}",Toast.LENGTH_SHORT).show()
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragment, logInFragment)
+            commit()
 
         }
 
 
-
     }
 
-    fun ReferenceEmail(UserEmail:TextView , TestEmail:String){
 
-        var Result : Boolean = false
+         override fun onResume() {
+            super.onResume()
+             fun SignUpClick() {
+                 supportFragmentManager.beginTransaction()
+                     .replace(R.id.flFragment, signupFragment)
+                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                     .commit()
+                 }
 
-        if (UserEmail.text == TestEmail){
+             fun backToLogIn(){
+                 supportFragmentManager.beginTransaction()
+                     .replace(R.id.flFragment, logInFragment)
+                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                     .commit()
 
-            Result = true
+             }
 
-        }
+             backToLogIn_imgbtn.setOnClickListener(){
 
-    }
+                 backToLogIn()
+             }
+
+
+            signup_btn.setOnClickListener() {
+
+                SignUpClick()
+            }
+
+
+            }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
