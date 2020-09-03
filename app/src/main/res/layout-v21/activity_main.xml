@@ -4,24 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1FA7B8">
+    android:background="#FFFFFF">
 
+    <EditText
 
-    <FrameLayout
-        android:id="@+id/flFragment"
-        android:layout_width="0dp"
+        android:id="@+id/email_edtText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:autofillHints=""
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:textColor="#000000"
+        android:textCursorDrawable="@drawable/custom_cursor"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FixIt_txt"
+        tools:ignore="RtlCompat" />
+
+    <EditText
+        android:id="@+id/password_edtText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:textColor="#000000"
+        android:textCursorDrawable="@drawable/custom_cursor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_edtText" />
+
+    <Button
+        android:id="@+id/LogIn_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/baloo"
+        android:text="@string/Log_In"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rememberMe_switch" />
+
+    <Button
+        android:id="@+id/signup_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/sign_up"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/or_txt" />
+
+    <TextView
+        android:id="@+id/or_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/baloo"
+        android:text="@string/or"
+        android:textColor="#595858"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LogIn_btn" />
+
+    <TextView
+        android:id="@+id/FixIt_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="180dp"
+        android:fontFamily="@font/baloo"
+        android:text="@string/Fix_It"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/rememberMe_switch"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/baloo"
+        android:paddingStart="0sp"
+        android:paddingEnd="140sp"
+        android:text="@string/remember_me"
+        android:textColor="#353434"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/password_edtText"
+        app:layout_constraintTop_toBottomOf="@+id/password_edtText"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="140dp"
+        android:layout_height="305dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/email_edtText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
+        app:layout_constraintVertical_bias="0.655"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 

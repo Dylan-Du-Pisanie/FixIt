@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Services">
+
+       <item>Choose a Service</item>
+        <item>Construction</item>
+        <item>Electrical</item>
+        <item>Gardening</item>
+        <item>House Repaires</item>
+        <item>Plumbing</item>
+
+    </string-array>
+</resources>

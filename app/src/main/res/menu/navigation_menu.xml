@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuHome"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/Home"/>
+
+    <item
+        android:id="@+id/menuProfile"
+        android:icon="@drawable/ic_person"
+        android:title="@string/Profile" />
+
+    <item
+        android:id="@+id/meneRequests"
+        android:icon="@drawable/ic_baseline_build_24"
+        android:title="@string/Services"/>
+
+    <item
+    android:id="@+id/menuNotifications"
+    android:icon="@drawable/ic_baseline_notifications_24"
+    android:title="@string/Notifications"/>
+
+    <item
+        android:id="@+id/menuAbout"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="@string/About"/>
+
+    <item
+        android:id="@+id/menuLogOut"
+        android:icon="@drawable/ic_baseline_reply_24"
+        android:title="@string/LogOut"/>
+
+
+
+</menu>

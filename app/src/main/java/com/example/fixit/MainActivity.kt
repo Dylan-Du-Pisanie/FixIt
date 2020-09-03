@@ -1,66 +1,45 @@
 package com.example.fixit
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentTransaction
-import kotlinx.android.synthetic.main.fragment_log_in.*
-import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var signupFragment: fragment_sign_up
-    lateinit var logInFragment: LogInFragment
 
-    @SuppressLint("ShowToast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        
+        val signupbtn : Button = findViewById(R.id.signup_btn)
 
-        logInFragment = LogInFragment()
-        signupFragment = fragment_sign_up()
-
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment, logInFragment)
-            commit()
-
+        signupbtn.setOnClickListener(){
+            OpenSignUp()
         }
 
+        val loginbtn : Button = findViewById(R.id.LogIn_btn)
+
+        loginbtn.setOnClickListener(){
+            OpenMainScreen()
+        }
 
     }
 
+    private fun OpenMainScreen() {
+        val openMain = Intent(this, MainScreen::class.java)
+        startActivity(openMain)
+    }
 
-         override fun onResume() {
-            super.onResume()
-             fun SignUpClick() {
-                 supportFragmentManager.beginTransaction()
-                     .replace(R.id.flFragment, signupFragment)
-                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                     .commit()
-                 }
-
-             fun backToLogIn(){
-                 supportFragmentManager.beginTransaction()
-                     .replace(R.id.flFragment, logInFragment)
-                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                     .commit()
-
-             }
-
-             backToLogIn_imgbtn.setOnClickListener(){
-
-                 backToLogIn()
-             }
+    private fun OpenSignUp() {
+        val openSignUp = Intent(this, SignUpActivity::class.java)
+        startActivity(openSignUp)
+    }
 
 
-            signup_btn.setOnClickListener() {
-
-                SignUpClick()
-            }
-
-
-            }
 
 }
+
+
 
 
 
